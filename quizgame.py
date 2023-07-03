@@ -1,51 +1,152 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Marvel Quiz</title>
-</head>
-<body>
-    <h1>Welcome to the Marvel quiz!</h1>
+def textclean(message, LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 "):
+  message = message.upper()
+  new = ''
+  for char in message:
+    if char in LETTERS:
+      new += char
+  return(new)
+correct_score = 0
+print('Welcome to the Marvel quiz!' )
 
-   
 
-        var correctScore = 0;
-        var playing = prompt("Do you want to play?");
-        playing = playing.toUpperCase();
+playing = input('Do you want to play? ')
+playing = textclean(playing)
 
-        if (playing !== "YES") {
-            document.write("<p>Game over!</p>");
-        } else {
-            document.write("<p>Ok, let's play!</p>");
-<script>
-        function checkAnswer(question, correctAnswer) {
-            var answer = prompt(question);
-            answer = answer.toUpperCase();
-            
-            if (answer === correctAnswer) {
-                document.write("<p>Correct!</p>");
-                return 1;
-            } else {
-                document.write("<p>Incorrect!</p>");
-                return 0;
-            }
-        }
+if playing != "YES":
+    quit()
 
-            correctScore += checkAnswer("What is Spider-Man's real name?\nA.)Peter Porker\nB.)Peter Parker\nC.)Tony Stark\nD.)Steve", "B");
-            correctScore += checkAnswer("Is Iron Man rich or poor?\nA.)Rich\nB.)Poor", "A");
-            correctScore += checkAnswer("Was Captain America ever an Avenger?\nA.)No\nB.)Definitely Not\nC.)Maybe\nD.)Yes", "D");
-            correctScore += checkAnswer("Is Thor from Asgard or Earth?\nA.)Asgard\nB.)Earth", "A");
-            correctScore += checkAnswer("Can any other Avenger lift Thor's hammer?\nA.)No\nB.)Yes", "B");
-            correctScore += checkAnswer("Who fixed Ultron?\nA.)Spider Man\nB.)Tony Stark\nC.)Einstein\nD.)Brianna Caza", "B");
-            correctScore += checkAnswer("In Spider-Man Homecoming, is Spider Man in High School, College, Middle School, or none?\nA.)High School\nB.)College\nC.)None\nD.)Middle School", "A");
-            correctScore += checkAnswer("In Civil War, who's team does Spider Man join?\nA.)Aunt May\nB.)Hulk\nC.)Iron Man\nD.)Captain America", "C");
-            correctScore += checkAnswer("Does Hawkeye have children?\nA.)Yes\nB.)No", "A");
-            correctScore += checkAnswer("How long was Captain America frozen for?\nA.)12 years\nB.)4 years\nC.)300 years\nD.)66 years", "C");
-            correctScore += checkAnswer("Who is Thor's brother?\nA.)Captain America\nB.)Captain Marvel\nC.)Loki\nD.)Odin", "C");
-            correctScore += checkAnswer("What is Hulk's real name?\nA.)Bruce Banter\nB.)Bruce Baner\nC.)Bruce Banner\nD.)Bruce Bannner", "C");
-            correctScore += checkAnswer("What color is Hulk's skin?\nA.)Green\nB.)Purple\nC.)Blue\nD.)Rainbow", "A");
-            correctScore += checkAnswer("Does Captain America approve of curse words?\nA.)No\nB.)Yes\nC.)Sometimes", "A");
-            correctScore += checkAnswer("How many Infinity Stones are there?\nA.)4\nB.)5\nC.)3\nD.)6", "D");
+print("Ok, let's play")
 
-            document.write("<p>You got " + correctScore + " questions correct</p>");
-            document.write("<p>You got " + (correctScore / 15 * 100) + "%</p>");
+answer = input("What is spider-man's real name?   \nA.)Peter Porker   \nB.)Peter Parker   \nC.)Tony Stark   \nD.)Steve   \nAnswer Here: ")
+answer = textclean(answer)
+if answer != "B":
+  print('Incorrect!')
+else:
+  print('Correct!')
+  correct_score += 1
+
+answer = input("Is Iron Man rich or poor?   \nA.)Rich   \nB.)Poor  \nAnswer Here: ")
+answer = textclean(answer)
+if answer == "A":
+  print('Correct!')
+  correct_score += 1
+else:
+  print('Incorrect!')
+
+answer = input("Was Captian America ever an Avenger? \nA.)No   \nB.)Defnitely Not   \nC.)Maybe   \nD.)Yes   \nAnswer Here: ")
+answer = textclean(answer)
+if answer == "D":
+  print('Correct!')
+  correct_score += 1
+else:
+  print('Incorrect!')
+
+answer = input("Is Thor from Asgard or Earth? \nA.)Asgard  \nB.)Earth  \nAnswer Here: ")
+answer = textclean(answer)
+if answer == "A":
+  print('Correct!')
+  correct_score += 1
+else:
+  print('Incorrect!')
+
+answer = input("Can any other avenger lift Thor's hammer? \nA.)No   \nB.)Yes  \nAnswer Here: ")
+answer = textclean(answer)
+if answer == "B":
+  print('Correct!')
+  correct_score += 1
+else:
+  print('Incorrect!')
+
+answer = input("Who fixed Ultron? \nA.)Spider Man  \nB.)Tony Stark   \nC.)Einstein  \nD.)Brianna Caza   \nAnswer Here: ")
+answer = textclean(answer)
+if answer == "B":
+  print('Correct!')
+  correct_score += 1
+else:
+  print('Incorrect!')
+
+answer = input("In Spider-Man Homecoming, is Spider Man in High School, College, Middle School, or none? \nA.)High School   \nB.)College   \nC.)None   \nD.)Middle School   \nAnswer Here: ")
+answer = textclean(answer)
+if answer == "A":
+  print('Correct!')
+  correct_score += 1
+else:
+  print('Incorrect!')
+  
+answer = input("In Civil War, who's team does Spider Man join? \nA.)Aunt May   \nB.)Hulk  \nC.)Iron Man   \nD.)Captain America   \nAnswer Here: ")
+answer = textclean(answer)
+if answer == "C":
+  print('Correct!')
+  correct_score += 1
+else:
+  print('Incorrect!')
+
+answer = input("Does Hawkeye have children? \nA.)Yes  \nB.)No  \nAnswer Here: ")
+answer = textclean(answer)
+if answer == "A":
+  print('Correct!')
+  correct_score += 1
+else:
+  print('Incorrect!')
+
+answer = input("How long was Captain America frozen for? \nA.)12 years   \nB.)4 years  \nC.)300 years   \nD.)66 years   \nAnswer Here: ")
+answer = textclean(answer)
+if answer == "C":
+  print('Correct!')
+  correct_score += 1
+else:
+  print('Incorrect!')
+
+answer = input("Who is Thor's brother? \nA.)Captain America   \nB.)Captain Marvel  \nC.)Loki   \nD.)Odin   \nAnswer Here: ")
+answer = textclean(answer)
+if answer == "C":
+  print('Correct!')
+  correct_score += 1
+else:
+  print('Incorrect!')
+
+answer = input("What is Hulk's real name? \nA.)Bruce Banter   \nB.)Bruce Baner   \nC.)Bruce Banner   \nD.)Bruce Bannner   \nAnswer Here: ")
+answer = textclean(answer)
+if answer == "C":
+  print('Correct!')
+  correct_score += 1
+else:
+  print('Incorrect!')
+
+answer = input("What color is Hulk's skin? \nA.)Green   \nB.)Purple   \nC.)Blue   \nD.)Rainbow  \nAnswer Here: ")
+answer = textclean(answer)
+if answer == "A":
+  print('Correct!')
+  correct_score += 1
+else:
+  print('Incorrect!')
+
+answer = input("Does Captain America approve of curse words? \nA.)No  \nB.)Yes   \nc.)Sometimes  \nAnswer Here: ")
+answer = textclean(answer)
+if answer == "A":
+  print('Correct!')
+  correct_score += 1
+else:
+  print('Incorrect!')
+
+answer = input("How many Infinity Stones are there? \nA.)4   \nB.)5  \nC.)3   \nD.)6  \nAnswer Here: ")
+answer = textclean(answer)
+if answer == "D":
+  print('Correct!')
+  correct_score += 1
+else:
+  print('Incorrect!')
+
+print("You got " + str(correct_score) + " questions correct")
+print("You got " + str(correct_score / 15 *100) + "%")
+if correct_score >= 12:
+  print("Amazing job! ")
+if correct_score ==11 :
+  print("Good job!")
+if correct_score ==110 :
+  print("Good job!")
+if correct_score ==19 :
+  print("Good job!")
+if correct_score <= 8:
+  print("It's ok, keep trying!")
 
