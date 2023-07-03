@@ -6,7 +6,17 @@
 <body>
     <h1>Welcome to the Marvel quiz!</h1>
 
-    <script>
+   
+
+        var correctScore = 0;
+        var playing = prompt("Do you want to play?");
+        playing = playing.toUpperCase();
+
+        if (playing !== "YES") {
+            document.write("<p>Game over!</p>");
+        } else {
+            document.write("<p>Ok, let's play!</p>");
+<script>
         function checkAnswer(question, correctAnswer) {
             var answer = prompt(question);
             answer = answer.toUpperCase();
@@ -19,15 +29,6 @@
                 return 0;
             }
         }
-
-        var correctScore = 0;
-        var playing = prompt("Do you want to play?");
-        playing = playing.toUpperCase();
-
-        if (playing !== "YES") {
-            document.write("<p>Game over!</p>");
-        } else {
-            document.write("<p>Ok, let's play!</p>");
 
             correctScore += checkAnswer("What is Spider-Man's real name?\nA.)Peter Porker\nB.)Peter Parker\nC.)Tony Stark\nD.)Steve", "B");
             correctScore += checkAnswer("Is Iron Man rich or poor?\nA.)Rich\nB.)Poor", "A");
